@@ -1,0 +1,126 @@
+.mailagent {
+  margin: 8px;
+  border: 1px solid #c4b5fd;
+  border-radius: 8px;
+  background: #faf9ff;
+  color: #1f2937;
+  font: 13px/1.4 system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.mailagent-barre {
+  background: #6d28d9;
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.mailagent-titre {
+  font-weight: 600;
+}
+
+.mailagent-zone {
+  padding: 10px 12px;
+}
+
+.mailagent-agents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-bottom: 8px;
+}
+
+.mailagent-agent {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mailagent-bouton {
+  border: 1px solid #6d28d9;
+  background: #fff;
+  color: #6d28d9;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 4px 6px 4px 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.mailagent-bouton:hover:not(:disabled) {
+  background: #ede9fe;
+}
+
+.mailagent-bouton:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.mailagent-bouton-principal {
+  background: #6d28d9;
+  color: #fff;
+  font-weight: 600;
+}
+
+.mailagent-bouton-principal:hover:not(:disabled) {
+  background: #5b21b6;
+}
+
+.mailagent-statut {
+  margin-top: 6px;
+  color: #4b5563;
+}
+
+.mailagent-resultats {
+  margin-top: 8px;
+}
+
+.mailagent-carte {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: #fff;
+}
+
+.mailagent-carte h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
+.mailagent-priorite {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 1px 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.mailagent-p5 { background: #dc2626; }
+.mailagent-p4 { background: #ea580c; }
+.mailagent-p3 { background: #d97706; }
+.mailagent-p2 { background: #2563eb; }
+.mailagent-p1 { background: #6b7280; }
+
+.mailagent-resume {
+  margin: 6px 0;
+}
+
+.mailagent-reponse pre {
+  white-space: pre-wrap;
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 6px 0;
+  font: 12px/1.45 system-ui, sans-serif;
+}
+
+.mailagent-echeances {
+  margin: 4px 0 4px 18px;
+  padding: 0;
+}
+
+.mailagent-erreur {
+  color: #b91c1c;
+}

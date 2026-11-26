@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Assistant Mail — Agents</title>
+  <link rel="stylesheet" href="agents.css">
+</head>
+<body>
+  <header>
+    <h1>Agents mail</h1>
+    <div class="actions-globales">
+      <button id="btn-nouveau" type="button" class="bouton-principal">+ Nouvel agent</button>
+      <button id="btn-exporter" type="button">Exporter</button>
+      <label class="bouton-fichier">Importer<input id="fichier-import" type="file" accept="application/json,.json" hidden></label>
+      <button id="btn-options" type="button">Options (clé API)</button>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Mes agents</h2>
+      <ul id="liste-agents" class="liste-agents"></ul>
+    </section>
+    <section id="formulaire" hidden>
+      <h2 id="form-titre">Nouvel agent</h2>
+      <form id="form-agent">
+        <label>Nom de l'agent
+          <input id="f-nom" type="text" required maxlength="80" placeholder="Ex : Tri pro & échéances">
+        </label>
+        <label>Modèle Mistral
+          <select id="f-modele">
+            <option value="mistral-small-latest">mistral-small-latest (rapide, économique)</option>
+            <option value="mistral-medium-latest">mistral-medium-latest (équilibré)</option>
+            <option value="mistral-large-latest">mistral-large-latest (le plus puissant)</option>
+          </select>
+        </label>
+        <label>Instructions (prompt système)
+          <textarea id="f-prompt" rows="8" required
+            placeholder="Ex : Tu es l'assistant d'une boîte mail pro. Évalue la priorité (1-5), résume le mail, rédige une réponse si nécessaire, extrais les échéances..."></textarea>
+        </label>
+        <fieldset>
+          <legend>Actions de l'agent</legend>
+          <label><input type="checkbox" id="f-priorite" checked> Prioriser le mail (étiquette + étoile)</label>
+          <label><input type="checkbox" id="f-reponse"> Suggérer une réponse (ouvre un brouillon)</label>
+          <label><input type="checkbox" id="f-echeances" checked> Détecter les échéances et créer des rappels</label>
+        </fieldset>
+        <label class="ligne-actif"><input type="checkbox" id="f-actif" checked> Agent actif</label>
+        <div class="form-boutons">
+          <button type="submit" class="bouton-principal">Enregistrer</button>
+          <button type="button" id="btn-annuler">Annuler</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <h2>Échéances enregistrées</h2>
+      <ul id="liste-echeances" class="liste-echeances"></ul>
+    </section>
+  </main>
+  <script src="agents.js"></script>
+</body>
+</html>

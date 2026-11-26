@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Assistant Mail — Options</title>
+  <link rel="stylesheet" href="agents.css">
+</head>
+<body class="options">
+  <main>
+    <h1>Options — Assistant Mail Mistral</h1>
+    <form id="form-options">
+      <label>Clé API Mistral
+        <div class="ligne">
+          <input id="f-apikey" type="password" placeholder="sk-..." autocomplete="off">
+          <button type="button" id="btn-voir">Voir</button>
+          <button type="button" id="btn-tester">Tester la clé</button>
+        </div>
+        <small>Créez une clé sur <a href="https://console.mistral.ai/api-keys/" target="_blank" rel="noopener noreferrer">console.mistral.ai</a>.
+        Elle est stockée uniquement dans le profil local de Thunderbird et n'est jamais envoyée ailleurs qu'à api.mistral.ai.</small>
+      </label>
+      <label>Modèle Mistral par défaut
+        <select id="f-modele">
+          <option value="mistral-small-latest">mistral-small-latest (rapide, économique)</option>
+          <option value="mistral-medium-latest">mistral-medium-latest (équilibré)</option>
+          <option value="mistral-large-latest">mistral-large-latest (le plus puissant)</option>
+        </select>
+      </label>
+      <label class="ligne-actif"><input type="checkbox" id="f-auto"> Traiter automatiquement chaque nouveau mail reçu (priorité + échéances, sans ouvrir de brouillon)</label>
+      <label>Rappel avant l'échéance (minutes)
+        <input id="f-rappel" type="number" min="0" max="10080" step="5">
+      </label>
+      <label>Longueur maximale du texte du mail envoyé à l'API (caractères)
+        <input id="f-longueur" type="number" min="500" max="50000" step="500">
+      </label>
+      <div class="form-boutons">
+        <button type="submit" class="bouton-principal">Enregistrer</button>
+      </div>
+      <p id="statut"></p>
+    </form>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
