@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "Assistant Mail Mistral",
+  "version": "1.0.0",
+  "description": "Agents IA pour Thunderbird : priorité des mails, réponses suggérées et rappels d'échéances via l'API Mistral.",
+  "author": "Mistral Vibe",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "assistant-mail-mistral@addon.local",
+      "strict_min_version": "115.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "tabs",
+    "compose",
+    "messagesRead",
+    "messagesModify",
+    "https://api.mistral.ai/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "Assistant Mail — gérer les agents",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "message_display_scripts": [
+    {
+      "run_at": "document_idle",
+      "script": ["messagedisplay.js"],
+      "css": ["messagedisplay.css"]
+    }
+  ],
+  "commands": {
+    "traiter-mail": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A"
+      },
+      "description": "Traiter le mail affiché avec tous les agents actifs"
+    }
+  }
+}
